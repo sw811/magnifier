@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>放大镜</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <link href="http://www.baidu.com/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="/src/magnifier.css">
+
+</head>
+<body>
+     <div class="magnifier">
+        <!--<div class="middle-pic">
+            <div class="float-mark"></div>
+            <div class="float-magnifier"></div>
+            <img class="middlePic" src="{%$tplData.magnifier[0].middlePic%}">
+        </div>
+        <div class="big-pic">
+            <img class="bigPic" src="{%$tplData.magnifier[0].bigPic%}">
+        </div>-->
+    </div>
+
+
+    <script src="http://s1.bdstatic.com/r/www/cache/static/jquery/jquery-1.10.2.min.js"></script>
+    <script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/2-0-6/esl.js"></script>
+    <script>
+
+    require.config({
+        baseUrl: 'src',
+        paths: {
+            'jquery': 'http://s1.bdstatic.com/r/www/cache/static/jquery/jquery-1.10.2.min'
+        },
+        packages: [{
+            'name': 'moye',
+            'location': '../../dep/moye/src/ui'
+        }]
+    });
+
+    </script>
+
+
+    <script>
+    require(['main'], function (m) {
+        m.init();
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+/**
+ * MOYE
+ * Copyright 2016 Baidu Inc. All rights reserved.
+ *
+ * @file 放大镜样式
+ * @author sunwei11 <sunwei11@baidu.com>
+ */
+
+@import '../dep/moye/src/css/variable.less';
+@import '../dep/moye/src/css/dep.less';
+
+@moye-magnifier-border-color : #d2d2d2;
+
+.@{moye-prefix}-magnifier {
+    position: relative;
+
+    .@{moye-prefix}-magnifier-middle-box {
+        width: 318px;
+        height: 318px;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        border: 1px solid @moye-magnifier-border-color;
+        font-size: 0;
+
+        // left: 0;
+        // top: 0;
+
+        img {
+            // position: absolute;
+            display: inline;
+            max-height: 100%;
+            border: none;
+
+
+        }
+    }
+
+    .@{moye-prefix}-magnifier-mark {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url(../img/mask.png) repeat scroll 0 0;
+        visibility: visible;
+        filter:alpha(opacity=50);
+        opacity: 0.5;
+        cursor: move;
+        z-index: 2;
+        display: none;
+    }
+
+    .@{moye-prefix}-magnifier-layer {
+
+        position: absolute;
+        background-color: #fff;
+        filter:alpha(opacity=0);
+        opacity: 0;
+        left: 0;
+        top: 0;
+        z-index: 3;
+    }
+
+
+    .@{moye-prefix}-magnifier-big-box {
+        position: absolute;
+
+        border: 1px solid #ededed;
+        overflow: hidden;
+        z-index: 20;
+        display: none;
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+
+}

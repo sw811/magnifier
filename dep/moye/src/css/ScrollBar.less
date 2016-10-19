@@ -1,0 +1,81 @@
+/**
+ * MOYE
+ * Copyright 2014 Baidu Inc. All rights reserved.
+ *
+ * @file 翻动条样式
+ * @author leon <leonlu@outlook.com>
+ */
+
+@import './variable.less';
+
+// 滚动条
+@moye-scrollbar-width: 500px;
+@moye-scrollbar-height: 300px;
+@moye-scrollbar-thumb-size: 10px;
+@moye-scrollbar-thumb-color: #eee;
+@moye-scrollbar-track-color: #333;
+
+
+//禁止选择文本
+.@{moye-prefix}-scrollbar-noselect {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.@{moye-prefix}-scrollbar {
+    width: @moye-scrollbar-width;
+    border: 2px solid #DDD;
+    height: @moye-scrollbar-height;
+    overflow: hidden;
+    position: relative;
+
+    &-body {
+        width: @moye-scrollbar-width;
+        position: relative;
+    }
+
+    &-track {
+        position: absolute;
+        width: @moye-scrollbar-thumb-size;
+        height: @moye-scrollbar-height;
+        background-color: @moye-scrollbar-track-color;
+        .border-radius(4px);
+        top: 0;
+        right: 0;
+    }
+
+    &-thumb {
+        width: @moye-scrollbar-thumb-size;
+        height: @moye-scrollbar-thumb-size*3;
+        background-color: @moye-scrollbar-thumb-color;
+        .border-radius(4px);
+        cursor: default;
+        position: absolute;
+        top: 0;
+    }
+
+}
+
+.@{moye-prefix}-scrollbar-horizontal {
+    .@{moye-prefix}-scrollbar-body {
+        width: @moye-scrollbar-width;
+        height: @moye-scrollbar-height;
+    }
+    .@{moye-prefix}-scrollbar-track {
+        width: @moye-scrollbar-width;
+        height: @moye-scrollbar-thumb-size;
+        top: auto;
+        right: auto;
+        left: 0;
+        bottom: 0;
+    }
+    .@{moye-prefix}-scrollbar-thumb {
+        top: auto;
+        left: 0;
+        width: @moye-scrollbar-thumb-size*3;
+        height: @moye-scrollbar-thumb-size;
+    }
+}
